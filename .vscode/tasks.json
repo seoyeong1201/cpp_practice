@@ -11,7 +11,8 @@
 		  "-std=c++17",
 		  "-stdlib=libc++",
 		  "-g",
-		  "${workspaceFolder}/*.cpp",
+		  "${fileDirname}/*.cpp",
+		//   "${workspaceFolder}/${fileBasenameNoExtension}.cpp",
 		  "-o",
 		  "${fileDirname}/${fileBasenameNoExtension}"
 		],
