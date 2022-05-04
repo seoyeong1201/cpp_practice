@@ -25,7 +25,13 @@ public:
         this->cusName=new char[strlen(cusName)+1];
         strcpy(this->cusName, cusName);
     }
-    int GetID(void)
+    Account(const Account & acc)
+    :accID(acc.accID), balance(acc.balance)
+    {
+        cusName=new char[strlen(acc.cusName)+1];
+        strcpy(cusName,acc.cusName);
+    }
+    int GetID(void) const
     {
         return accID;
     }
@@ -45,7 +51,7 @@ public:
         cout<<"출금완료"<<endl<<endl;
         return;
     }
-    void ShowAccInfo(void)
+    void ShowAccInfo(void) const
     {
         cout<<"계좌ID: "<<accID<<endl;
         cout<<"이 름: "<<cusName<<endl;
